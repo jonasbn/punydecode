@@ -4,7 +4,7 @@ A simple CLI tool to decode a punycode encoded string
 
 ## Usage
 
-Decoding a single string
+Decoding a single string, meaning conversion from punycode to human readable text
 
 ```bash
 punydecode xn--blbrgrd-fxak7p
