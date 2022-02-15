@@ -101,6 +101,7 @@ This particular repository touched the following topics:
 1. Testing a CLI tool / Main function in Go
 
 See the resources and references below for resources on the above topics.
+
 ## Resources and References
 
 1. [Wikipedia: Punycode](https://en.wikipedia.org/wiki/Punycode)
