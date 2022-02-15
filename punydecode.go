@@ -9,7 +9,13 @@ import (
 	"golang.org/x/net/idna"
 )
 
+// Main function, wrapping the realMain function for unit-test capability
 func main() {
+	os.Exit(realMain())
+}
+
+// realMain function, wrapped by the Main function, processes inpput STDIN and CLI and returns an integer indicating success/failure
+func realMain() int {
 	argsWithoutProg := os.Args[1:]
 
 	var punycodeString string
@@ -23,16 +29,22 @@ func main() {
 
 		if err := scanner.Err(); err != nil {
 			log.Println(err)
-			os.Exit(1)
+			return 2
 		}
 
 	} else {
 		punycodeString = os.Args[1] // we only take a single parameter, the string to decode
 	}
 
-	decodedString, err := idna.ToUnicode(punycodeString)
+	if punycodeString != "" {
 
-	if err == nil {
-		fmt.Printf("%s\n", decodedString)
+		decodedString, err := idna.ToUnicode(punycodeString)
+
+		if err == nil {
+			fmt.Printf("%s\n", decodedString)
+			return 0
+		}
 	}
+
+	return 1
 }
