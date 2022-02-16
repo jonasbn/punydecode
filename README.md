@@ -19,7 +19,7 @@ blåbærgrød
 As an alternative to provided arguments, you can pipe text into `punyencode`
 
 ```bash
-echo xn--blbrgrd-fxak7p | punydecode 
+echo xn--blbrgrd-fxak7p | punydecode
 ```
 
 Will emit
