@@ -42,23 +42,15 @@ If you want a particular version, please see [Go Modules Reference][MOD]
 
 If you want to encode into punycode, see [`punyencode`][punyencode].
 
-## Required Arguments
-
-## Options
-
 ## Diagnostics
 
 ## Exit Status
 
 - `0` success, provided string has been decoded and printed
 
-- `1` failure,
+- `1` failure not argument provided or data from STDIN
 
-- `2` failure,
-
-## Configuration
-
-No configuration available
+- `2` failure reading from STDIN
 
 ## Dependencies
 
@@ -67,10 +59,6 @@ This utility requires:
 - [golang.org/x/net/idna][goidna]
 
 In addition to a few of the standard libraries
-
-## Incompatibilities
-
-No known incompatibilities
 
 ## Bugs and Limitations
 
@@ -83,6 +71,12 @@ The utility is limited to decoding to Unicode (version 13) from Punycode.
 Please see [golang.org/x/net/idna][goidna] for details.
 
 ### Only a single argument
+
+`punydecode` only takes a single argument.
+
+```bash
+punydecode xn--blbrgrd-fxak7p
+```
 
 ## Author
 
